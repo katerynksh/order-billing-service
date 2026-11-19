@@ -17,17 +17,17 @@ public class BillingService {
     }
 
     // Усунуто Stamp Coupling: передаємо лише примітивні параметри city та weightKg
-        public static double calculateDeliveryCost(String city, double weightKg) {
-            double baseRate;
-            if ("Ivano-Frankivsk".equals(city)) {
-                baseRate = 50.0;
-            } else if ("Kyiv".equals(city)) {
-                baseRate = 80.0;
-            } else {
-                baseRate = 110.0;
-            }
-            return baseRate + (weightKg * 12.0);
-        }
+public static double calculateDeliveryCost(String city, double weightKg) {
+    double baseRate;
+    if ("Ivano-Frankivsk".equals(city)) {
+        baseRate = 50.0;
+    } else if ("Kyiv".equals(city)) {
+        baseRate = 80.0;
+    } else {
+        baseRate = 110.0;
+    }
+    return baseRate + (weightKg * 15.0);
+}
 
     // Усунуто Common та Control Coupling: явний параметр taxRate + окремий метод без modeFlag
     public static String processStandardInvoice(double amount, String city, double weightKg, double taxRate) {
